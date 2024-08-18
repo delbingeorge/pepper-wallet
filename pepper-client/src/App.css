@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "sans-serif";
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+}
+
+.sidebar-header {
+    margin-left: 20px;
+}
+
+.sidebar-header img {
+    width: 150px;
+    margin: 10px 0;
+}
+
+.sidebar-item-container {
+    padding: 0 15px;
+}
+
+.sidebar-item {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    padding-right: 75px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-item:hover {
+    transform: scale(1.02);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item.active {
+    background-color: black;
+    color: white;
+    transform: scale(1.02);
+}
+
+.sidebar-item img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-item span {
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.sidebar-item.active img {
+    transform: scale(1.2);
+}
+
+.sidebar-item.active span {
+    color: white;
+}
