@@ -7,6 +7,10 @@ import Settings from './components/Settings';
 import Profile from './components/Profile';
 import Sidebar from './navigation/Sidebar';
 
+// Image import
+import IncomeIcon from './assets/images/icons/side-contents/income.png'
+import ExpenseIcon from './assets/images/icons/side-contents/expense.png'
+
 function App() {
   return (
     <div className="container">
@@ -21,7 +25,25 @@ function App() {
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
-        <div></div>
+        <div className='side-contents'>
+          <h1>Quick actions</h1>
+          <div className='quick-action'>
+            <div className='quick-action-btn-div'>
+              <img src={IncomeIcon} alt="" />
+              <span>Add Income</span>
+            </div>
+            <div className='quick-action-btn-div'>
+              <img src={ExpenseIcon} alt="" />
+              <span>Add Income</span>
+            </div>
+          </div>
+          <h1>Previous entries</h1>
+          <div>
+            <div>
+
+            </div>
+          </div>
+        </div>
       </Router>
     </div>
   );

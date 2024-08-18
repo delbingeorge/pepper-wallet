@@ -2,7 +2,7 @@ import React from 'react'
 
 const Transactions = () => {
      return (
-          <div>
+          <div className='content-container'>
                Transactions
           </div>
      )
