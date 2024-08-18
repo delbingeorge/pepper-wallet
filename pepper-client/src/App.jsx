@@ -40,7 +40,7 @@ function App() {
           <h1>Previous entries</h1>
           <div>
             <div>
-
+  
             </div>
           </div>
         </div>
