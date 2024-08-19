@@ -24,7 +24,6 @@ app.post("/verify-token", async (req, res) => {
             email: userRecord.email,
             displayName: userRecord.displayName,
             photoURL: userRecord.photoURL,
-            phoneNumber: userRecord.phoneNumber,
             emailVerified: userRecord.emailVerified,
             lastSignInTime: userRecord.metadata.lastSignInTime,
             creationTime: userRecord.metadata.creationTime,

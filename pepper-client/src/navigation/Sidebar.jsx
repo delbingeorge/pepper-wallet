@@ -2,7 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import '../assets/styles/sidebar.css'
 import PepperWallet from '../assets/images/logo/pepper-wallet.png'
-import Profile from '../assets/images/icons/user-profile.png'
+import CloseIcon from '../assets/images/icons/action-icon/close.png'
 
 // Outline Icon imports
 import DashboardIcon from '../assets/images/icons/sidebar-icons/dashboard-outline.png'
@@ -17,11 +17,13 @@ import StatSolid from '../assets/images/icons/sidebar-icons/graph-solid.png'
 import GearSolid from '../assets/images/icons/sidebar-icons/gear-solid.png'
 import { userInfo } from '../provider/RecoilStore';
 import { useRecoilValue } from 'recoil';
+import { useState } from 'react';
 
 function Sidebar() {
      const userValue = useRecoilValue(userInfo);
      const location = useLocation();
-
+     const [showModal, setShowModal] = useState(false)
+     console.log(userValue)
      return (
           <div className="sidebar">
                <div>
@@ -61,9 +63,24 @@ function Sidebar() {
                          </Link>
                     </div>
                </div>
-               <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} >
+
+               <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} onClick={() => { setShowModal(!showModal) }}>
                     <img className='profile-image' src={userValue.photoURL} alt="" />
                     <span>{userValue.displayName}</span>
+               </div>
+
+               <div className={`slide-in-sheet ${showModal ? 'open' : 'close'}`}>
+                    <div className='sheet-content'>
+                         <div className='sheet-head'>
+                              <h1>Profile Management</h1>
+                              <img src={CloseIcon} alt="" onClick={() => { setShowModal(false) }} />
+                         </div>
+                         <div className='profile-content'>
+                              <img src={userValue.photoURL} alt="" />
+                              <h2>{userValue.displayName}</h2>
+                              <h3>{userValue.email}</h3>
+                         </div>
+                    </div>
                </div>
           </div>
      );
