@@ -64,7 +64,7 @@ function Sidebar() {
                     </div>
                </div>
 
-               <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} onClick={() => { setShowModal(!showModal) }}>
+               <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} onClick={() => { setShowModal(true); }}>
                     <img className='profile-image' src={userValue.photoURL} alt="" />
                     <span>{userValue.displayName}</span>
                </div>
@@ -73,7 +73,7 @@ function Sidebar() {
                     <div className='sheet-content'>
                          <div className='sheet-head'>
                               <h1>Profile Management</h1>
-                              <img src={CloseIcon} alt="" onClick={() => { setShowModal(false) }} />
+                              <img className='head-action-close' src={CloseIcon} alt="" onClick={() => { setShowModal(false) }} />
                          </div>
                          <div className='profile-content'>
                               <img src={userValue.photoURL} alt="" />
