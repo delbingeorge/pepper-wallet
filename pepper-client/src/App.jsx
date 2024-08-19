@@ -10,16 +10,19 @@ import Sidebar from './navigation/Sidebar';
 // Image import
 import IncomeIcon from './assets/images/icons/side-contents/income.png'
 import ExpenseIcon from './assets/images/icons/side-contents/expense.png'
-import { useState } from 'react';
 import LandingPage from './components/auth/LandingPage';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { authState, userInfo } from './provider/RecoilStore';
 
 function App() {
-  const [authState, setAuthState] = useState(false)
+  const authValue = useRecoilValue(authState)
+  const [userValue, setUserValue] = useRecoilState(userInfo)
+
   return (
     <div className="container">
       <Router>
         {
-          authState ?
+          authValue ?
             <>
               <Sidebar />
               <div className="content">

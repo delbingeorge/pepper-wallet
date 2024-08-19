@@ -15,10 +15,12 @@ import DashboardSolid from '../assets/images/icons/sidebar-icons/dashboard-solid
 import WalletSolid from '../assets/images/icons/sidebar-icons/wallet-solid.png'
 import StatSolid from '../assets/images/icons/sidebar-icons/graph-solid.png'
 import GearSolid from '../assets/images/icons/sidebar-icons/gear-solid.png'
+import { userInfo } from '../provider/RecoilStore';
+import { useRecoilValue } from 'recoil';
 
 function Sidebar() {
-
-     const location = useLocation()
+     const userValue = useRecoilValue(userInfo);
+     const location = useLocation();
 
      return (
           <div className="sidebar">
@@ -59,13 +61,10 @@ function Sidebar() {
                          </Link>
                     </div>
                </div>
-               <Link
-                    className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`}
-                    to="/profile"
-               >
-                    <img src={Profile} alt="" />
-                    <span>Profile</span>
-               </Link>
+               <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} >
+                    <img className='profile-image' src={userValue.photoURL} alt="" />
+                    <span>{userValue.displayName}</span>
+               </div>
           </div>
      );
 }

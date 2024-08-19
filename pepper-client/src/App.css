@@ -203,3 +203,7 @@
 .auth-btn span {
     font-weight: 500;
 }
+
+.profile-image{
+    border-radius: 50%;
+}
