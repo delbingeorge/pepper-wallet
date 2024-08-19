@@ -18,6 +18,7 @@ import { authState, showModalForExpense, showModalForIncome, userInfo } from './
 import { useState } from 'react';
 import AddIncome from './components/modals/AddIncome';
 import AddExpense from './components/modals/AddExpense';
+import PreviousEntries from './components/PreviousEntries/PreviousEntries';
 
 function App() {
   const authValue = useRecoilValue(authState)
@@ -56,7 +57,7 @@ function App() {
                 <h1>Previous entries</h1>
                 <div>
                   <div>
-
+                    <PreviousEntries />
                   </div>
                 </div>
               </div>

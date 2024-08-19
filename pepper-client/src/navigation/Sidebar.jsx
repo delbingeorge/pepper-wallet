@@ -94,7 +94,7 @@ function Sidebar() {
                               <h2>{userValue.displayName}</h2>
                               <h3>{userValue.email}</h3>
                          </div>
-                         <button onClick={() => { signOutUser() }}>signout</button>
+                         <button className='sign-out' onClick={() => { signOutUser() }}>Sign Out</button>
                     </div>
                </div>
           </div>
