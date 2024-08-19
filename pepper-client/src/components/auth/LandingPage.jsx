@@ -1,29 +1,23 @@
 import React from 'react'
 import PepperWallet from '../../assets/images/logo/pepper-wallet.png'
-import SignIn from './SignIn'
-import SignUp from './SignUp'
+import GoogleIcon from '../../assets/images/icons/login-icon/google-icon.png'
 
 const LandingPage = () => {
      return (
           <div className='landing-container'>
                <div className='image-container'>
-                    <img src={PepperWallet} alt="" />
+                    <img className='app-icon' src={PepperWallet} alt="" />
                     <div className='content-container-auth'>
                          <h1>Before it was chaos,
                               <br />
                               now its pepper!
                          </h1>
                          <p>Pepper is a expense tracker for managing all the expenses.</p>
+                         <div className='auth-btn'>
+                              <img className='auth-icon' src={GoogleIcon} alt="" />
+                              <span>Continue with Google</span>
+                         </div>
                     </div>
-               </div>
-               <div className='auth-container'>
-                    <div className='auth-head'>
-                         <h1>Create an account</h1>
-                         <h2>Join Pepper</h2>
-                    </div>
-                    <form>
-                         <input type="text" />
-                    </form>
                </div>
           </div>
      )

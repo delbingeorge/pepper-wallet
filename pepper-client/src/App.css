@@ -140,8 +140,11 @@
 
 .landing-container .image-container {
     min-height: 100vh;
-    width: 60vw;
-    padding: 20px 30px;
+    min-width: 100vw;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 40px;
+
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -150,23 +153,53 @@
         url("../public/landing-page.png");
 }
 
-.landing-container .image-container img {
+.landing-container .image-container .app-icon {
     width: 150px;
 }
 
 .landing-container .image-container .content-container-auth h1 {
     color: white;
     font-weight: 600;
-    line-height: 35px;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    line-height: 45px;
 }
 
 .landing-container .image-container .content-container-auth p {
     color: rgba(255, 255, 255, 0.758);
     font-weight: 500;
+    margin: 10px 0;
 }
 
 .auth-container {
     min-height: 100vh;
     width: 40vw;
+}
+
+.auth-btn {
+    background-color: white;
+    padding: 10px 15px;
+    width: fit-content;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.auth-btn:hover {
+    background-color: rgba(255, 255, 255, 0.812);
+    cursor: pointer;
+}
+
+.auth-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.auth-btn span {
+    font-weight: 500;
 }
