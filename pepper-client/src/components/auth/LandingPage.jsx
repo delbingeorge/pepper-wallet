@@ -16,7 +16,7 @@ const LandingPage = () => {
                const result = await signInWithPopup(auth, provider);
                const user = result.user;
                const idToken = await user.getIdToken();
-               const response = await axios.post('http://localhost:3000/verify-token', { token: idToken });
+               const response = await axios.post('http://localhost:3000/auth/verify-token', { token: idToken });
                setUserValue(response.data)
                setAuthValue(true)
                navigation('/dashboard')

@@ -1,5 +1,5 @@
 // src/components/Sidebar.js
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../assets/styles/sidebar.css'
 import PepperWallet from '../assets/images/logo/pepper-wallet.png'
 import CloseIcon from '../assets/images/icons/action-icon/close.png'
@@ -15,15 +15,29 @@ import DashboardSolid from '../assets/images/icons/sidebar-icons/dashboard-solid
 import WalletSolid from '../assets/images/icons/sidebar-icons/wallet-solid.png'
 import StatSolid from '../assets/images/icons/sidebar-icons/graph-solid.png'
 import GearSolid from '../assets/images/icons/sidebar-icons/gear-solid.png'
-import { userInfo } from '../provider/RecoilStore';
-import { useRecoilValue } from 'recoil';
+import { authState, userInfo } from '../provider/RecoilStore';
+import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
 import { useState } from 'react';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 function Sidebar() {
-     const userValue = useRecoilValue(userInfo);
      const location = useLocation();
+     const navigation = useNavigate();
      const [showModal, setShowModal] = useState(false)
-     console.log(userValue)
+     const [authValue, setAuthValue] = useRecoilState(authState);
+     const [userValue, setUserValue] = useRecoilState(userInfo)
+     const signOutUser = async () => {
+          try {
+               await signOut(auth)
+               setAuthValue(false)
+               setUserValue(false)
+               navigation('/')
+          } catch (error) {
+               console.log(error)
+          }
+     }
+
      return (
           <div className="sidebar">
                <div>
@@ -80,6 +94,7 @@ function Sidebar() {
                               <h2>{userValue.displayName}</h2>
                               <h3>{userValue.email}</h3>
                          </div>
+                         <button onClick={() => { signOutUser() }}>signout</button>
                     </div>
                </div>
           </div>

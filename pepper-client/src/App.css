@@ -280,6 +280,7 @@
 }
 
 .sheet-content .sheet-head .head-action-close {
+    cursor: pointer;
     width: 25px;
 }
 
@@ -353,7 +354,15 @@ textarea {
     resize: vertical;
 }
 
-.input-category .category-span {
+.input-chip-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.input-chip-group .chip {
     padding: 8px 15px;
     min-width: fit-content;
     background-color: #f6f6f6;
@@ -363,7 +372,7 @@ textarea {
     transition: 0.3s ease-in-out;
 }
 
-.input-category .category-span:hover {
+.input-chip-group .chip:hover {
     background-color: #e7e7e7;
     cursor: pointer;
 }

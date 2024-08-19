@@ -1,37 +1,20 @@
 import express from "express";
 import cors from "cors";
-import admin from "firebase-admin";
-import serviceAccount from "./pepper-wallet-firebase-adminsdk-3y6qh-883162853e.json" assert { type: "json" };
-
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-});
+import bodyParser from "body-parser";
+import authRoute from "./routes/authRoute.js";
+import incomeRoute from "./routes/incomeRoute.js";
+import expenseRoute from "./routes/ExpenseRoute.js";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
+
+app.use("/auth", authRoute);
+app.use("/transactions", incomeRoute);
+app.use("/transactions", expenseRoute);
 
 const port = 3000;
-
-app.post("/verify-token", async (req, res) => {
-    const idToken = req.body.token;
-    try {
-        const decodedToken = await admin.auth().verifyIdToken(idToken);
-        const uid = decodedToken.uid;
-        const userRecord = await admin.auth().getUser(uid);
-        res.send({
-            uid: userRecord.uid,
-            email: userRecord.email,
-            displayName: userRecord.displayName,
-            photoURL: userRecord.photoURL,
-            emailVerified: userRecord.emailVerified,
-            lastSignInTime: userRecord.metadata.lastSignInTime,
-            creationTime: userRecord.metadata.creationTime,
-        });
-    } catch (error) {
-        res.status(401).send("Unauthorized");
-    }
-});
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
