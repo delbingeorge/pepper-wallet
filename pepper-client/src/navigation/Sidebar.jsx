@@ -24,16 +24,16 @@ function Sidebar() {
           <div className="sidebar">
                <div>
                     <div className='sidebar-header'>
-                         <Link to={'/'}>
+                         <Link to={'/dashboard'} >
                               <img src={PepperWallet} alt="" />
                          </Link>
                     </div>
                     <div className='sidebar-item-container'>
                          <Link
-                              className={`sidebar-item ${location.pathname === '/' ? 'active' : ''}`}
-                              to="/"
+                              className={`sidebar-item ${location.pathname === '/dashboard' ? 'active' : ''}`}
+                              to="/dashboard"
                          >
-                              <img src={location.pathname === '/' ? DashboardSolid : DashboardIcon} alt="" />
+                              <img src={location.pathname === '/dashboard' ? DashboardSolid : DashboardIcon} alt="" />
                               <span>Dashboard</span>
                          </Link>
                          <Link

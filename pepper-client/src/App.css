@@ -16,6 +16,12 @@
     align-items: center;
 }
 
+.content-container {
+    min-height: 100vh;
+    min-width: 63vw;
+    background-color: #f6f6f6;
+}
+
 .sidebar {
     height: 100vh;
     display: flex;
@@ -52,8 +58,8 @@
 }
 
 .sidebar-item:hover {
-    transform: scale(1.02);
-    background-color: rgba(0, 0, 0, 0.1);
+    /* transform: scale(1.02); */
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
 .sidebar-item.active {
@@ -80,12 +86,6 @@
 
 .sidebar-item.active span {
     color: white;
-}
-
-.content-container {
-    min-height: 100vh;
-    min-width: 63vw;
-    background-color: #f6f6f6;
 }
 
 .side-contents {
@@ -128,4 +128,45 @@
 .quick-action .quick-action-btn-div img:hover {
     transform: scale(1.02);
     cursor: pointer;
+}
+
+.landing-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.landing-container .image-container {
+    min-height: 100vh;
+    width: 60vw;
+    padding: 20px 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgba(147, 169, 255, 0.097), rgba(0, 0, 0, 0.626)),
+        url("../public/landing-page.png");
+}
+
+.landing-container .image-container img {
+    width: 150px;
+}
+
+.landing-container .image-container .content-container-auth h1 {
+    color: white;
+    font-weight: 600;
+    line-height: 35px;
+    margin-bottom: 10px;
+}
+
+.landing-container .image-container .content-container-auth p {
+    color: rgba(255, 255, 255, 0.758);
+    font-weight: 500;
+}
+
+.auth-container {
+    min-height: 100vh;
+    width: 40vw;
 }
