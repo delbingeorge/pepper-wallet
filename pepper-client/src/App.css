@@ -19,7 +19,8 @@
 .content-container {
     min-height: 100vh;
     min-width: 63vw;
-    background-color: #f6f6f6;
+    background-color: #f8f8f8;
+    padding: 15px;
 }
 
 .sidebar {
@@ -437,7 +438,7 @@ textarea {
 .transaction-entry {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     /* min-width: 300px; */
     padding: 5px 15px;
     border-bottom: 1px solid rgb(228, 228, 228);
@@ -471,4 +472,59 @@ textarea {
 
 .transaction-entry .expense {
     color: rgb(255, 40, 40);
+}
+
+.content-container .content-head h1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.content-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.content-filter .filter-options {
+    display: flex;
+    align-items: center;
+}
+
+.content-filter .filter-options {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.content-filter .filter-options .filter-btn {
+    padding: 6px 14px;
+    outline: none;
+    border: none;
+    min-width: fit-content;
+    background-color: #ffffff;
+    width: fit-content;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: 0.3s ease-in-out;
+    outline: 2px solid white;
+}
+
+.content-filter .filter-options .active {
+    color: rgb(0, 0, 0);
+    outline: 2px solid rgb(101, 101, 101);
+}
+
+.result-content h4 {
+    font-size: 15px;
+    color: rgb(105, 105, 105);
+    font-weight: 500;
+}
+
+.trans-amt {
+    font-size: 1.1rem;
+}
+.padding {
+    padding: 10px 0;
 }

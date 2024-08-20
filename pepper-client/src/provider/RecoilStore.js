@@ -24,3 +24,8 @@ export const showModalForExpense = atom({
     key: "showModalForExpense",
     default: false,
 });
+
+export const userTransactions = atom({
+    key: "userTransactions",
+    default: null,
+});
