@@ -7,6 +7,7 @@ import axios from 'axios'
 
 const AddExpense = () => {
      const [addExpense, setAddExpense] = useRecoilState(showModalForExpense);
+     const [required, setRequired] = useState(false)
      const userValue = useRecoilValue(userInfo)
      const [formData, setFormData] = useState({
           type: 'expense',
@@ -27,6 +28,10 @@ const AddExpense = () => {
 
      const handleSubmit = async (e) => {
           e.preventDefault();
+          if (!formData.category) {
+               setRequired(true)
+               return;
+          }
           try {
                const res = await axios.post('http://localhost:3000/transactions/add-expense', { ...formData, token: userValue.uid })
                if (res.status === 200) {
@@ -61,6 +66,7 @@ const AddExpense = () => {
                          <div className='input-field'>
                               <label className='input-label' htmlFor="income-title">Title</label>
                               <input
+                                   required
                                    type="text"
                                    id='income-title'
                                    name="title"
@@ -80,6 +86,7 @@ const AddExpense = () => {
                          <div className='input-field'>
                               <label className='input-label' htmlFor="income-amount">Amount</label>
                               <input
+                                   required
                                    type="number"
                                    id='income-amount'
                                    name="amount"
@@ -90,6 +97,7 @@ const AddExpense = () => {
                          <div className='input-field'>
                               <label className='input-label' htmlFor="income-date">Date of transaction</label>
                               <input
+                                   required
                                    type="date"
                                    id='income-date'
                                    name="dateOfTransaction"
@@ -103,9 +111,11 @@ const AddExpense = () => {
                                    {["Food", "Grocery", "Fuel", "Salary", "Freelancing", "Investments", "Gifts", "Rental Income", 'Others'].map((category) => (
                                         <span
                                              key={category}
-                                             className={`chip ${formData.category === category ? 'active' : ''}`}
+                                             className={`chip ${formData.category === category ? 'active' : 'inactive'}`}
                                              data-value={category}
-                                             onClick={() => setFormData({ ...formData, category })}
+                                             onClick={() => {
+                                                  setFormData({ ...formData, category })
+                                             }}
                                         >
                                              {category}
                                         </span>
@@ -113,10 +123,11 @@ const AddExpense = () => {
                               </div>
                          </div>
                          <div className='form-submit-container'>
+                              {required && <label className='input-label' htmlFor="income-category">Category not selected!</label>}
                               <input className='form-submit' type="submit" value="Add Expense" />
                          </div>
-                    </form>
-               </div>
+                    </form >
+               </div >
           </>
      )
 }

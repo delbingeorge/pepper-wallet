@@ -16,6 +16,15 @@ app.use("/transactions", expenseRoute);
 
 const port = 3000;
 
+app.get("/transaction/user/:uid", async (req, res) => {
+    const { uid } = req.params;
+    try {
+        res.status(200).json({ message: "API Working correctly!" });
+    } catch (error) {
+        console.log("Something went wrong!");
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });

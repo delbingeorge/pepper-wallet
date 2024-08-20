@@ -54,7 +54,7 @@ function App() {
                     <span>Add Expense</span>
                   </div>
                 </div>
-                <h1>Previous entries</h1>
+                <h2>Previous entries</h2>
                 <div>
                   <div>
                     <PreviousEntries />

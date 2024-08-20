@@ -6,7 +6,7 @@ const incomeRoute = express.Router();
 incomeRoute.post("/add-income", async (req, res) => {
     try {
         const { type, title, description, amount, dateOfTransaction, category, token } = req.body;
-        await addTransaction("incomes", {
+        await addTransaction("transactions", {
             type,
             title,
             description,

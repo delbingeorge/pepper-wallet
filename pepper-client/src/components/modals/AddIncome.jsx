@@ -4,9 +4,11 @@ import IncomeLogo from '../../assets/images/icons/essential-icons/star-struck.pn
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { showModalForIncome, userInfo } from '../../provider/RecoilStore'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
+
 const AddIncome = () => {
      const [addIncome, setAddIncome] = useRecoilState(showModalForIncome);
+     const [required, setRequired] = useState(false)
      const userValue = useRecoilValue(userInfo)
      const [formData, setFormData] = useState({
           type: 'income',
@@ -27,6 +29,10 @@ const AddIncome = () => {
 
      const handleSubmit = async (e) => {
           e.preventDefault();
+          if (!formData.category) {
+               setRequired(true)
+               return;
+          }
           try {
                const res = await axios.post('http://localhost:3000/transactions/add-income', { ...formData, token: userValue.uid })
                if (res.status === 200) {
@@ -61,6 +67,7 @@ const AddIncome = () => {
                          <div className='input-field'>
                               <label className='input-label' htmlFor="income-title">Title</label>
                               <input
+                                   required
                                    type="text"
                                    id='income-title'
                                    name="title"
@@ -80,6 +87,7 @@ const AddIncome = () => {
                          <div className='input-field'>
                               <label className='input-label' htmlFor="income-amount">Amount</label>
                               <input
+                                   required
                                    type="number"
                                    id='income-amount'
                                    name="amount"
@@ -90,6 +98,7 @@ const AddIncome = () => {
                          <div className='input-field'>
                               <label className='input-label' htmlFor="income-date">Date of transaction</label>
                               <input
+                                   required
                                    type="date"
                                    id='income-date'
                                    name="dateOfTransaction"
@@ -100,7 +109,7 @@ const AddIncome = () => {
                          <div className="input-field">
                               <label className='input-label' htmlFor="income-category">Select category</label>
                               <div className='input-chip-group' id='transaction-type'>
-                                   {["Food", "Grocery", "Fuel", "Salary", "Freelancing", "Investments", "Gifts", "Rental Expense","Others"].map((category) => (
+                                   {["Food", "Grocery", "Fuel", "Salary", "Freelancing", "Investments", "Gifts", "Rental Expense", "Others"].map((category) => (
                                         <span
                                              key={category}
                                              className={`chip ${formData.category === category ? 'active' : ''}`}
@@ -113,6 +122,7 @@ const AddIncome = () => {
                               </div>
                          </div>
                          <div className='form-submit-container'>
+                              {required && <label className='input-label' htmlFor="income-category">Category not selected!</label>}
                               <input className='form-submit' type="submit" value="Add Income" />
                          </div>
                     </form>

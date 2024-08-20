@@ -102,6 +102,13 @@
     padding-left: 20px;
 }
 
+.side-contents h2 {
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
 .quick-action {
     display: flex;
     justify-content: space-evenly;
@@ -357,9 +364,13 @@ textarea {
 .input-chip-group {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 5px;
+}
+
+.input-chip-group .active {
+    filter: invert(1);
 }
 
 .input-chip-group .chip {
@@ -379,7 +390,8 @@ textarea {
 
 .add-income-form .form-submit-container {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    gap: 15px;
     justify-content: flex-end;
 }
 
@@ -416,4 +428,40 @@ textarea {
 .sign-out:hover {
     cursor: pointer;
     background-color: rgba(240, 58, 58, 0.801);
+}
+
+.transactions {
+    padding: 0 15px;
+}
+
+.transaction-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* min-width: 300px; */
+    padding: 5px 15px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.transaction-entry .transaction-icon {
+    width: 22px;
+    margin-right: 15px;
+}
+
+.transaction-entry .trans-content {
+    display: flex;
+    width: 85%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.transaction-entry .trans-content .trans-head {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+}
+.transaction-entry .trans-content .trans-desc {
+    font-size: 13px;
+    color: rgb(73, 73, 73);
 }

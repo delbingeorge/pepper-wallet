@@ -6,7 +6,7 @@ const expenseRoute = express.Router();
 expenseRoute.post("/add-expense", async (req, res) => {
     try {
         const { type, title, description, amount, dateOfTransaction, category, token } = req.body;
-        await addTransaction("expenses", {
+        await addTransaction("transactions", {
             type,
             title,
             description,
