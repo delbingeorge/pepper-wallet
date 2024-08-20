@@ -109,7 +109,7 @@ const AddIncome = () => {
                          <div className="input-field">
                               <label className='input-label' htmlFor="income-category">Select category</label>
                               <div className='input-chip-group' id='transaction-type'>
-                                   {["Food", "Grocery", "Fuel", "Salary", "Freelancing", "Investments", "Gifts", "Rental Expense", "Others"].map((category) => (
+                                   {["Gifts", "Salary", "Savings", "Others"].map((category) => (
                                         <span
                                              key={category}
                                              className={`chip ${formData.category === category ? 'active' : ''}`}

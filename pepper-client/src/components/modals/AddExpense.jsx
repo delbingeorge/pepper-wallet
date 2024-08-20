@@ -108,7 +108,7 @@ const AddExpense = () => {
                          <div className="input-field">
                               <label className='input-label' htmlFor="income-category">Select category</label>
                               <div className='input-chip-group' id='transaction-type'>
-                                   {["Food", "Grocery", "Fuel", "Salary", "Freelancing", "Investments", "Gifts", "Rental Income", 'Others'].map((category) => (
+                                   {["Food", "Grocery", "Fuel", "Health", "Shopping", "Debt paid", "Education", "Entertainment", 'Rent', "Transport", "Others"].map((category) => (
                                         <span
                                              key={category}
                                              className={`chip ${formData.category === category ? 'active' : 'inactive'}`}

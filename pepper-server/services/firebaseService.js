@@ -28,3 +28,19 @@ export const addTransaction = async (collectionName, data) => {
     const ref = db.collection(collectionName).doc();
     await ref.set(data);
 };
+
+export const getAllTransactions = async (uid) => {
+    const transactionRef = db.collection("transactions");
+    const snapshot = await transactionRef.where("userId", "==", uid).get();
+
+    if (snapshot.empty) {
+        console.log("No matching records!");
+        return [];
+    }
+
+    const transactions = [];
+    snapshot.forEach((doc) => {
+        transactions.push({ id: doc.id, ...doc.data() });
+    });
+    return transactions;
+};

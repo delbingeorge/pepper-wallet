@@ -465,3 +465,10 @@ textarea {
     font-size: 13px;
     color: rgb(73, 73, 73);
 }
+.transaction-entry .income {
+    color: #00be08;
+}
+
+.transaction-entry .expense {
+    color: rgb(255, 40, 40);
+}

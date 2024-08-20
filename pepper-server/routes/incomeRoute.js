@@ -6,13 +6,14 @@ const incomeRoute = express.Router();
 incomeRoute.post("/add-income", async (req, res) => {
     try {
         const { type, title, description, amount, dateOfTransaction, category, token } = req.body;
+        const categoryCase = category.toLowerCase();
         await addTransaction("transactions", {
             type,
             title,
             description,
             amount,
             dateOfTransaction,
-            category,
+            category: categoryCase,
             userId: token,
         });
         res.status(200).json({ message: "Income added successfully!" });
