@@ -24,6 +24,7 @@
 }
 
 .sidebar {
+    min-width: 17vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -78,6 +79,11 @@
 
 .sidebar-item span {
     margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.sidebar-item .user-name {
+    min-width: 120px;
     transition: color 0.3s ease;
 }
 
@@ -527,4 +533,73 @@ textarea {
 }
 .padding {
     padding: 10px 0;
+}
+.transaction-entry:hover {
+    background-color: rgba(251, 251, 251, 0.955);
+    cursor: pointer;
+}
+
+.get-started {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 5px;
+    background-color: rgb(239, 239, 239);
+}
+
+.get-started .get-started-head {
+    max-width: 50%;
+}
+
+.get-started .get-started-head h3 {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.get-started .get-started-head img {
+    width: 180px;
+}
+
+.get-started .get-started-head p {
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: 500;
+}
+
+.get-started-side {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-started-side .casual-monkey-icon {
+    width: 50px;
+}
+
+.get-started-side .casual-monkey-icon:nth-child(1) {
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 0s;
+}
+.get-started-side .casual-monkey-icon {
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 1.67s;
+}
+.get-started-side .casual-monkey-icon {
+    animation: float 4s ease-in-out infinite;
+    animation-delay: 3.33s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

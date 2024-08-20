@@ -1,9 +1,31 @@
 import React from 'react'
+import { useRecoilValue } from 'recoil';
+import { userInfo } from '../provider/RecoilStore';
+import PepperWallet from '../assets/images/logo/pepper-wallet.png'
+import MonkeyHear from '../assets/images/icons/casual-icon/hear-no-evil-monkey.png'
+import MonkeySee from '../assets/images/icons/casual-icon/see-no-evil-monkey.png'
+import MonkeySpeak from '../assets/images/icons/casual-icon/speak-no-evil-monkey.png'
 
 const Dashboard = () => {
+     const userValue = useRecoilValue(userInfo)
      return (
           <div className='content-container'>
-               Dashboard
+               {/* <div className='content-head'>
+                    <h1>Dashboard</h1>
+                    <h2></h2>
+               </div>     */}
+               <div className='get-started'>
+                    <div className='get-started-head'>
+                         <h3>Welcome to</h3>
+                         <img src={PepperWallet} alt="" />
+                         <p>A personal expense tracker is a user-friendly tool designed to help individuals monitor and manage their finances efficiently.</p>
+                    </div>
+                    <div className='get-started-side'>
+                         <img className='casual-monkey-icon' src={MonkeySee} alt="" />
+                         <img className='casual-monkey-icon' src={MonkeyHear} alt="" />
+                         <img className='casual-monkey-icon' src={MonkeySpeak} alt="" />
+                    </div>
+               </div>
           </div>
      )
 }

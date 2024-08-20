@@ -6,16 +6,13 @@ import Statistic from './components/Statistic';
 import Settings from './components/Settings';
 import Profile from './components/Profile';
 import Sidebar from './navigation/Sidebar';
-import CloseIcon from './assets/images/icons/action-icon/close.png'
-import IncomeLogo from './assets/images/icons/essential-icons/star-struck.png'
 
 // Image import
 import IncomeIcon from './assets/images/icons/side-contents/income.png'
 import ExpenseIcon from './assets/images/icons/side-contents/expense.png'
 import LandingPage from './components/auth/LandingPage';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { authState, showModalForExpense, showModalForIncome, userInfo } from './provider/RecoilStore';
-import { useState } from 'react';
+import { authState, showModalForExpense, showModalForIncome } from './provider/RecoilStore';
 import AddIncome from './components/modals/AddIncome';
 import AddExpense from './components/modals/AddExpense';
 import PreviousEntries from './components/PreviousEntries/PreviousEntries';

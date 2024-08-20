@@ -77,10 +77,11 @@ function Sidebar() {
                          </Link>
                     </div>
                </div>
-
-               <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} onClick={() => { setShowModal(true); }}>
-                    <img className='profile-image' src={userValue.photoURL} alt="" />
-                    <span>{userValue.displayName}</span>
+               <div className="sidebar-item-container">
+                    <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} onClick={() => { setShowModal(true); }}>
+                         <img className='profile-image' src={userValue.photoURL} alt="" />
+                         <span className='user-name'>{userValue.displayName}</span>
+                    </div>
                </div>
 
                <div className={`slide-in-sheet ${showModal ? 'open' : 'close'}`}>
