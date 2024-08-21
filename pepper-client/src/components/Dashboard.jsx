@@ -2,9 +2,9 @@ import React from 'react'
 import { useRecoilValue } from 'recoil';
 import { userInfo } from '../provider/RecoilStore';
 import PepperWallet from '../assets/images/logo/pepper-wallet.png'
-import MonkeyHear from '../assets/images/icons/casual-icon/hear-no-evil-monkey.png'
-import MonkeySee from '../assets/images/icons/casual-icon/see-no-evil-monkey.png'
-import MonkeySpeak from '../assets/images/icons/casual-icon/speak-no-evil-monkey.png'
+import MonkeyHear from '../assets/images/icons/casual-icon/hear-no-evil-monkey.gif'
+import MonkeySee from '../assets/images/icons/casual-icon/see-no-evil-monkey.gif'
+import MonkeySpeak from '../assets/images/icons/casual-icon/speak-no-evil-monkey.gif'
 
 const Dashboard = () => {
      const userValue = useRecoilValue(userInfo)

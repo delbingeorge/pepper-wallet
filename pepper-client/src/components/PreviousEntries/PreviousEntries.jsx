@@ -30,7 +30,7 @@ const PreviousEntries = () => {
 
     return (
         <div className="transactions">
-            {transactions.map((val, key) => {
+            {transactions.slice(0, 10).map((val, key) => {
                 const imgSrc = categoryImages[val.category]
                 return (
                     <div key={key} className="transaction-entry">

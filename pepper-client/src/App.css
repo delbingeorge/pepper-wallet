@@ -118,6 +118,7 @@
 
 .quick-action {
     display: flex;
+    padding-bottom: 20px;
     justify-content: space-evenly;
 }
 
@@ -545,7 +546,7 @@ textarea {
     justify-content: space-between;
     width: 100%;
     padding: 20px 25px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: rgb(239, 239, 239);
 }
 

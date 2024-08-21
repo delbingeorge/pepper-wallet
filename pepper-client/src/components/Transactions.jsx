@@ -19,7 +19,7 @@ const Transactions = () => {
                     <h1>Transactions</h1>
                     <h2></h2>
                </div>
-               <div className='content-filter'>
+               {userTransactionData[0]?.length > 0 && <div className='content-filter'>
                     <div className='filter-options'>
                          <button className={`filter-btn ${showOnly === 'expense' && 'active'}`} onClick={() => { setShowOnly('expense') }}>Expenses</button>
                          <button className={`filter-btn ${showOnly === 'income' && 'active'}`} onClick={() => { setShowOnly('income') }}>Income</button>
@@ -31,7 +31,7 @@ const Transactions = () => {
                     <div className='result-content'>
                          <h4>{filterResult?.length} transactions</h4>
                     </div>
-               </div>
+               </div>}
                <div className="transactions">
                     {
                          filterResult?.map((val, key) => {
@@ -41,7 +41,7 @@ const Transactions = () => {
                                         <img className="transaction-icon" src={imgSrc} alt={val.category} />
                                         <div className="trans-content">
                                              <h1 className="trans-head">{val.title}</h1>
-                                             <p className="trans-desc">{val.description}</p>
+                                             <p className="trans-desc">{val.description || val.category}</p>
                                         </div>
                                         <h1 className={`trans-amt ${val.type == 'income' ? 'income' : 'expense'}`}>{val.amount}</h1>
                                    </div>

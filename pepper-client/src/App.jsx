@@ -10,6 +10,7 @@ import Sidebar from './navigation/Sidebar';
 // Image import
 import IncomeIcon from './assets/images/icons/side-contents/income.png'
 import ExpenseIcon from './assets/images/icons/side-contents/expense.png'
+import SplitIcon from './assets/images/icons/side-contents/split.png'
 import LandingPage from './components/auth/LandingPage';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { authState, showModalForExpense, showModalForIncome } from './provider/RecoilStore';
@@ -50,12 +51,14 @@ function App() {
                     <img src={ExpenseIcon} alt="" />
                     <span>Add Expense</span>
                   </div>
+                  {/* <div className='quick-action-btn-div' onClick={() => setAddIncome(true)}>
+                    <img src={SplitIcon} alt="" />
+                    <span>Add Split</span>
+                  </div> */}
                 </div>
                 <h2>Previous entries</h2>
                 <div>
-                  <div>
-                    <PreviousEntries />
-                  </div>
+                  <PreviousEntries />
                 </div>
               </div>
             </>
