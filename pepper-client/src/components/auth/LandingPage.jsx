@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { authState, userInfo } from '../../provider/RecoilStore';
 import axios from 'axios';
+
 const LandingPage = () => {
      const navigation = useNavigate()
      const [authValue, setAuthValue] = useRecoilState(authState);

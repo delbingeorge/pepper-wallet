@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import CloseIcon from '../../assets/images/icons/action-icon/close.png'
-import IncomeLogo from '../../assets/images/icons/essential-icons/star-struck.gif'
+import IncomeLogo from '../../assets/images/icons/casual-icon/zipper-mouth-face.gif'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { showModalForExpense, userInfo } from '../../provider/RecoilStore'
 import axios from 'axios'

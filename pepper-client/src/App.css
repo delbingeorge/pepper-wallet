@@ -61,6 +61,7 @@
 
 .sidebar-item:hover {
     /* transform: scale(1.02); */
+    cursor: pointer;
     background-color: rgba(0, 0, 0, 0.06);
 }
 
@@ -484,6 +485,7 @@ textarea {
 .content-container .content-head h1 {
     font-size: 1.1rem;
     font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .content-filter {
@@ -603,4 +605,86 @@ textarea {
     100% {
         transform: translateY(0);
     }
+}
+
+.transaction-action-icon {
+    width: 30px;
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.transaction-action-icon:hover {
+    background-color: #ededed;
+}
+
+.transaction-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete-prompt {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.delete-prompt-head h1 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.delete-prompt-head p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #4b4b4b;
+}
+.delete-prompt-action {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+.delete-prompt-action {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.delete-prompt-action .cancel {
+    outline: none;
+    background-color: rgb(231, 230, 230);
+    border: 2px solid rgb(231, 230, 230);
+    padding: 5px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.delete-prompt-action .delete {
+    outline: none;
+    border: 2px solid rgb(245, 41, 41);
+    color: white;
+    background-color: rgb(245, 41, 41);
+    padding: 5px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.delete-prompt-action .delete:hover {
+    background-color: rgb(255, 71, 71);
+    border: 2px solid rgb(255, 71, 71);
+}
+
+.no-transaction-found {
+    padding: 10px 5px;
+    font-size: 15px;
 }

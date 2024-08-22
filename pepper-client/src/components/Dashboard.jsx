@@ -7,13 +7,14 @@ import MonkeySee from '../assets/images/icons/casual-icon/see-no-evil-monkey.gif
 import MonkeySpeak from '../assets/images/icons/casual-icon/speak-no-evil-monkey.gif'
 
 const Dashboard = () => {
-     const userValue = useRecoilValue(userInfo)
      return (
           <div className='content-container'>
+               
                {/* <div className='content-head'>
                     <h1>Dashboard</h1>
                     <h2></h2>
                </div>     */}
+
                <div className='get-started'>
                     <div className='get-started-head'>
                          <h3>Welcome to</h3>
@@ -26,6 +27,7 @@ const Dashboard = () => {
                          <img className='casual-monkey-icon' src={MonkeySpeak} alt="" />
                     </div>
                </div>
+
           </div>
      )
 }

@@ -16,7 +16,8 @@ import WalletSolid from '../assets/images/icons/sidebar-icons/wallet-solid.png'
 import StatSolid from '../assets/images/icons/sidebar-icons/graph-solid.png'
 import GearSolid from '../assets/images/icons/sidebar-icons/gear-solid.png'
 import { authState, userInfo } from '../provider/RecoilStore';
-import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
+import DefaultImage from '../assets/images/icons/default-icon/sample.png'
 import { useState } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
@@ -79,7 +80,7 @@ function Sidebar() {
                </div>
                <div className="sidebar-item-container">
                     <div className={`sidebar-item ${location.pathname === '/profile' ? 'active' : ''}`} onClick={() => { setShowModal(true); }}>
-                         <img className='profile-image' src={userValue.photoURL} alt="" />
+                         <img className='profile-image' src={userValue.photoURL || DefaultImage} alt="" />
                          <span className='user-name'>{userValue.displayName}</span>
                     </div>
                </div>

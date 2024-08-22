@@ -34,7 +34,6 @@ export const getAllTransactions = async (uid) => {
     const snapshot = await transactionRef.where("userId", "==", uid).get();
 
     if (snapshot.empty) {
-        console.log("No matching records!");
         return [];
     }
 
@@ -43,4 +42,9 @@ export const getAllTransactions = async (uid) => {
         transactions.push({ id: doc.id, ...doc.data() });
     });
     return transactions;
+};
+
+export const removeTransaction = async (transactionId) => {
+    const ref = db.collection("transactions").doc(transactionId.id);
+    await ref.delete();
 };
