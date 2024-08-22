@@ -18,7 +18,6 @@ incomeRoute.post("/add-income", async (req, res) => {
         });
         res.status(200).json({ message: "Income added successfully!" });
     } catch (error) {
-        console.error("Error adding income:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });

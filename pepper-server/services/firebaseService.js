@@ -48,3 +48,8 @@ export const removeTransaction = async (transactionId) => {
     const ref = db.collection("transactions").doc(transactionId.id);
     await ref.delete();
 };
+
+export const updateTransaction = async (data, tId) => {
+    const ref = db.collection("transactions").doc(tId);
+    await ref.update(data);
+};
