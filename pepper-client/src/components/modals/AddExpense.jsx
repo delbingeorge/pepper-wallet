@@ -127,7 +127,7 @@ const AddExpense = () => {
                               <input className='form-submit' type="submit" value="Add Expense" />
                          </div>
                     </form >
-               </div >
+               </div>
           </>
      )
 }

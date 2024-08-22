@@ -69,13 +69,13 @@ function Sidebar() {
                               <img src={location.pathname === '/stat' ? StatSolid : StatIcon} alt="" />
                               <span>Statistic</span>
                          </Link>
-                         <Link
+                         {/* <Link
                               className={`sidebar-item ${location.pathname === '/settings' ? 'active' : ''}`}
                               to="/settings"
                          >
                               <img src={location.pathname === '/settings' ? GearSolid : GearIcon} alt="" />
                               <span>Settings</span>
-                         </Link>
+                         </Link> */}
                     </div>
                </div>
                <div className="sidebar-item-container">

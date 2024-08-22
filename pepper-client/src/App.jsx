@@ -1,4 +1,5 @@
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { authState, showModalForExpense, showModalForIncome } from './provider/RecoilStore';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Transactions from './components/Transactions';
@@ -10,10 +11,8 @@ import Sidebar from './navigation/Sidebar';
 // Image import
 import IncomeIcon from './assets/images/icons/side-contents/income.png'
 import ExpenseIcon from './assets/images/icons/side-contents/expense.png'
-import SplitIcon from './assets/images/icons/side-contents/split.png'
 import LandingPage from './components/auth/LandingPage';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { authState, showModalForExpense, showModalForIncome } from './provider/RecoilStore';
 import AddIncome from './components/modals/AddIncome';
 import AddExpense from './components/modals/AddExpense';
 import PreviousEntries from './components/PreviousEntries/PreviousEntries';
@@ -35,7 +34,7 @@ function App() {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/transactions" element={<Transactions />} />
                   <Route path="/stat" element={<Statistic />} />
-                  <Route path="/settings" element={<Settings />} />
+                  {/* <Route path="/settings" element={<Settings />} /> */}
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/" element={<Navigate to="/dashboard" />} />
                 </Routes>
