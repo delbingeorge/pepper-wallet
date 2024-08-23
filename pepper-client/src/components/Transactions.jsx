@@ -10,7 +10,6 @@ import CloseIcon from '../assets/images/icons/action-icon/close.png'
 const Transactions = () => {
      const userTransactionData = useRecoilValue(userTransactions);
      const [showOnly, setShowOnly] = useState("");
-     const userValue = useRecoilValue(userInfo);
      const [showDeletePrompt, setShowDeletePrompt] = useState(false);
      const [showEditPrompt, setShowEditPrompt] = useState(false);
      const [modalDetails, setModalDetails] = useState({});
