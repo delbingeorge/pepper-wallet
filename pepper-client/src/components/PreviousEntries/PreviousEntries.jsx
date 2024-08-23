@@ -5,28 +5,7 @@ import axios from "axios";
 import { categoryImages } from "../../assets/data/CategoryImages";
 
 const PreviousEntries = () => {
-
-    const userValue = useRecoilValue(userInfo);
-    const [transactions, setTransactions] = useState([])
-    const [allTransactions, getAllTransactions] = useRecoilState(userTransactions)
-
-    useEffect(() => {
-        fetchAllTransactions();
-    }, [userValue]);
-
-    const fetchAllTransactions = async () => {
-        try {
-            const res = await axios.get(`http://localhost:3000/transactions/user/${userValue.uid}`)
-            if (res.status === 200) {
-                setTransactions(res.data);
-                getAllTransactions(res.data);
-            } else {
-                console.log("Failed to fetch transactions");
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    const transactions = useRecoilValue(userTransactions)
 
     return (
         <div className="transactions">

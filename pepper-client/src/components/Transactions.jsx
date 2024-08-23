@@ -1,6 +1,6 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useRecoilValue } from 'recoil'
+import React, { useEffect, useState } from 'react'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { userInfo, userTransactions } from '../provider/RecoilStore'
 import { categoryImages } from '../assets/data/CategoryImages'
 import RemoveIcon from '../assets/images/icons/action-icon/remove.png'
@@ -8,12 +8,14 @@ import EditIcon from '../assets/images/icons/action-icon/edit.png'
 import CloseIcon from '../assets/images/icons/action-icon/close.png'
 
 const Transactions = () => {
-     const userTransactionData = useRecoilValue(userTransactions);
+     const [userTransactionData, setUserTransactionData] = useState([]);
+     const [transactions, setTransactions] = useRecoilState(userTransactions)
      const [showOnly, setShowOnly] = useState("");
      const [showDeletePrompt, setShowDeletePrompt] = useState(false);
      const [showEditPrompt, setShowEditPrompt] = useState(false);
      const [modalDetails, setModalDetails] = useState({});
      const [deleteItemId, setDeleteItemId] = useState(null);
+     const userValue = useRecoilValue(userInfo)
      const [formData, setFormData] = useState({
           type: 'income',
           title: '',
@@ -22,6 +24,24 @@ const Transactions = () => {
           dateOfTransaction: '',
           category: '',
      });
+
+     useEffect(() => {
+          fetchAllTransactions();
+     }, [userInfo, formData, transactions])
+
+     const fetchAllTransactions = async () => {
+          try {
+               const res = await axios.get(`http://localhost:3000/transactions/user/${userValue.uid}`)
+               if (res.status === 200) {
+                    setUserTransactionData(res.data);
+                    setTransactions(res.data)
+               } else {
+                    console.log("Failed to fetch transactions");
+               }
+          } catch (error) {
+               console.log(error)
+          }
+     }
 
      const filterResult = userTransactionData?.filter(val => {
           if (showOnly === 'expense') return val.type === 'expense';
