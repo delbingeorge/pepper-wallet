@@ -237,7 +237,7 @@ const Transactions = () => {
                               <div className="input-field">
                                    <label className='input-label' htmlFor="income-category">Select category</label>
                                    <div className='input-chip-group' id='transaction-type'>
-                                        {["Gifts", "Salary", "Savings", "Others", "Food", "Grocery", "Fuel", "Health", "Shopping", "Debt paid", "Education", "Entertainment", 'Rent', "Transport", "Others"].map((category, index) => (
+                                        {["Gifts", "Salary", "Savings", "Food", "Grocery", "Fuel", "Health", "Shopping", "Debt paid", "Education", "Entertainment", 'Rent', "Transport", "Others"].map((category, index) => (
                                              <span
                                                   key={`${category}-${index}`}
                                                   className={`chip ${formData.category === category ? 'active' : ''}`}

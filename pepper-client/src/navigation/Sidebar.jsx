@@ -62,13 +62,13 @@ function Sidebar() {
                               <img src={location.pathname === '/transactions' ? WalletSolid : WalletIcon} alt="" />
                               <span>Transactions</span>
                          </Link>
-                         <Link
+                         {/* <Link
                               className={`sidebar-item ${location.pathname === '/stat' ? 'active' : ''}`}
                               to="/stat"
                          >
                               <img src={location.pathname === '/stat' ? StatSolid : StatIcon} alt="" />
                               <span>Statistic</span>
-                         </Link>
+                         </Link> */}
                          {/* <Link
                               className={`sidebar-item ${location.pathname === '/settings' ? 'active' : ''}`}
                               to="/settings"

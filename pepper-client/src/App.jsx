@@ -33,7 +33,7 @@ function App() {
                 <Routes>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/transactions" element={<Transactions />} />
-                  <Route path="/stat" element={<Statistic />} />
+                  {/* <Route path="/stat" element={<Statistic />} /> */}
                   {/* <Route path="/settings" element={<Settings />} /> */}
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/" element={<Navigate to="/dashboard" />} />
