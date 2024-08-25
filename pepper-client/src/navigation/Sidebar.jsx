@@ -7,14 +7,10 @@ import CloseIcon from '../assets/images/icons/action-icon/close.png'
 // Outline Icon imports
 import DashboardIcon from '../assets/images/icons/sidebar-icons/dashboard-outline.png'
 import WalletIcon from '../assets/images/icons/sidebar-icons/wallet-outline.png'
-import StatIcon from '../assets/images/icons/sidebar-icons/graph-outline.png'
-import GearIcon from '../assets/images/icons/sidebar-icons/gear-outline.png'
 
 // Solid Icon imports
 import DashboardSolid from '../assets/images/icons/sidebar-icons/dashboard-solid.png'
 import WalletSolid from '../assets/images/icons/sidebar-icons/wallet-solid.png'
-import StatSolid from '../assets/images/icons/sidebar-icons/graph-solid.png'
-import GearSolid from '../assets/images/icons/sidebar-icons/gear-solid.png'
 import { authState, userInfo } from '../provider/RecoilStore';
 import { useRecoilState } from 'recoil';
 import DefaultImage from '../assets/images/icons/default-icon/sample.png'

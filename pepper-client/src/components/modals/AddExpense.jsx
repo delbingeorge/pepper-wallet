@@ -1,9 +1,12 @@
+// Main import
 import React, { useState } from 'react'
-import CloseIcon from '../../assets/images/icons/action-icon/close.png'
-import IncomeLogo from '../../assets/images/icons/casual-icon/zipper-mouth-face.gif'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { showModalForExpense, userInfo } from '../../provider/RecoilStore'
 import axios from 'axios'
+
+// Assets import
+import IncomeLogo from '../../assets/images/icons/casual-icon/zipper-mouth-face.gif'
+import CloseIcon from '../../assets/images/icons/action-icon/close.png'
 
 const AddExpense = () => {
      const [addExpense, setAddExpense] = useRecoilState(showModalForExpense);

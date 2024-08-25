@@ -1,12 +1,15 @@
+// Main import
 import React from 'react'
 import { auth, provider } from '../../../firebase';
-import PepperWallet from '../../assets/images/logo/pepper-wallet.png'
-import GoogleIcon from '../../assets/images/icons/login-icon/google-icon.png'
 import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { authState, userInfo } from '../../provider/RecoilStore';
 import axios from 'axios';
+
+// Assets import
+import PepperWallet from '../../assets/images/logo/pepper-wallet.png'
+import GoogleIcon from '../../assets/images/icons/login-icon/google-icon.png'
 
 const LandingPage = () => {
      const navigation = useNavigate()
@@ -20,7 +23,8 @@ const LandingPage = () => {
                const response = await axios.post('http://localhost:3000/auth/verify-token', { token: idToken });
                setUserValue(response.data)
                setAuthValue(true)
-               navigation('/dashboard')
+               // navigation('/dashboard')
+               navigation('/transactions')
 
           } catch (error) {
                console.error("Error signing in with Google: ", error);

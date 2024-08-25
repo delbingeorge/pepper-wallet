@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { userInfo, userTransactions } from "../../provider/RecoilStore";
-import axios from "axios";
+import { useRecoilValue } from "recoil";
+import { userTransactions } from "../../provider/RecoilStore";
 import { categoryImages } from "../../assets/data/CategoryImages";
 
 const PreviousEntries = () => {

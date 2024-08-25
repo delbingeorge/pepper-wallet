@@ -1,10 +1,12 @@
+// Main import
 import React, { useState } from 'react'
-import CloseIcon from '../../assets/images/icons/action-icon/close.png'
-import IncomeLogo from '../../assets/images/icons/essential-icons/star-struck.gif'
+import axios from 'axios'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { showModalForIncome, userInfo } from '../../provider/RecoilStore'
-import axios from 'axios'
-import toast, { Toaster } from 'react-hot-toast';
+
+// Assets import
+import CloseIcon from '../../assets/images/icons/action-icon/close.png'
+import IncomeLogo from '../../assets/images/icons/essential-icons/star-struck.gif'
 
 const AddIncome = () => {
      const [addIncome, setAddIncome] = useRecoilState(showModalForIncome);
