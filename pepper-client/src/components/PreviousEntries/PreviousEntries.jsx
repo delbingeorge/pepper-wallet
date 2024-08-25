@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 import { userTransactions } from "../../provider/RecoilStore";
-import { categoryImages } from "../../assets/data/CategoryImages";
+import { categoryImages } from "../../assets/data/categoryImages.js";
 
 const PreviousEntries = () => {
     const transactions = useRecoilValue(userTransactions)
