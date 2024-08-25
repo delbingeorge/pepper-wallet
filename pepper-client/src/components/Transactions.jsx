@@ -31,7 +31,7 @@ const Transactions = () => {
 
      const fetchAllTransactions = async () => {
           try {
-               const res = await axios.get(`http://localhost:3000/transactions/user/${userValue.uid}`)
+               const res = await axios.get(`${import.meta.env.VITE_API_URL}/transactions/user/${userValue.uid}`)
                if (res.status === 200) {
                     setUserTransactionData(res.data);
                     setTransactions(res.data)
@@ -65,7 +65,7 @@ const Transactions = () => {
           }
 
           try {
-               const res = await axios.put('http://localhost:3000/transactions/update-info', {
+               const res = await axios.put(`${import.meta.env.VITE_API_URL}/transactions/update-info`, {
                     ...formData,
                     tId: modalDetails.id
                });
@@ -89,7 +89,7 @@ const Transactions = () => {
 
      const handleDelete = async () => {
           try {
-               const res = await axios.delete(`http://localhost:3000/transactions/delete/${deleteItemId}`);
+               const res = await axios.delete(`${import.meta.env.VITE_API_URL}/transactions/delete/${deleteItemId}`);
                if (res.status === 200) {
                     setShowDeletePrompt(false);
                } else {

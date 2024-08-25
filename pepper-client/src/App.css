@@ -169,8 +169,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, rgba(147, 169, 255, 0.097), rgba(0, 0, 0, 0.626)),
-        url("../public/landing-page.png");
+    background-image: linear-gradient(to bottom, rgba(147, 169, 255, 0.097), rgba(0, 0, 0, 0.626)), url("/landing-page.png");
 }
 
 .landing-container .image-container .app-icon {
@@ -745,6 +744,10 @@ textarea {
     color: rgb(255, 40, 40);
 }
 
+.for-mobile {
+    display: none;
+}
+
 @media only screen and (max-width: 480px) {
     .sidebar {
         min-width: fit-content;
@@ -793,7 +796,7 @@ textarea {
     .sidebar-item span {
         display: none;
     }
-    
+
     .side-contents {
         display: none;
     }
@@ -806,5 +809,9 @@ textarea {
     }
     .content-container {
         min-width: fit-content;
+    }
+
+    .for-mobile {
+        display: block;
     }
 }

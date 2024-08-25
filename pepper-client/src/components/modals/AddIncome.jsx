@@ -36,7 +36,7 @@ const AddIncome = () => {
                return;
           }
           try {
-               const res = await axios.post('http://localhost:3000/transactions/add-income', { ...formData, token: userValue.uid })
+               const res = await axios.post(`${import.meta.env.VITE_API_URL}/transactions/add-income`, { ...formData, token: userValue.uid })
                if (res.status === 200) {
                     setAddIncome(false)
                     setFormData({

@@ -15,17 +15,17 @@ const LandingPage = () => {
      const navigation = useNavigate()
      const [authValue, setAuthValue] = useRecoilState(authState);
      const [userValue, setUserValue] = useRecoilState(userInfo);
+     const API_URL = import.meta.env.VITE_API_URL;
      const signInWithGoogle = async () => {
           try {
                const result = await signInWithPopup(auth, provider);
                const user = result.user;
                const idToken = await user.getIdToken();
-               const response = await axios.post('http://localhost:3000/auth/verify-token', { token: idToken });
+               const response = await axios.post(`${API_URL}/auth/verify-token`, { token: idToken });
                setUserValue(response.data)
                setAuthValue(true)
-               // navigation('/dashboard')
-               navigation('/transactions')
-
+               navigation('/dashboard')
+               // navigation('/transactions')
           } catch (error) {
                console.error("Error signing in with Google: ", error);
           }

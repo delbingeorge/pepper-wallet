@@ -2,7 +2,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../assets/styles/sidebar.css'
 import PepperWallet from '../assets/images/logo/pepper-wallet.png'
-import PepperWalletForMobile from '../../public/pepper-wallet.png'
+import PepperWalletForMobile from '/pepper-wallet.png'
 import CloseIcon from '../assets/images/icons/action-icon/close.png'
 
 // Outline Icon imports
@@ -67,16 +67,16 @@ function Sidebar() {
                               <span>Transactions</span>
                          </Link>
                          <div onClick={() => setAddIncome(true)}
-                              className={`sidebar-item`}
+                              className={`sidebar-item for-mobile`}
                          >
                               <img src={AddIncomeIcon} alt="" />
-                              <span>Transactions</span>
+                              <span>Add Income</span>
                          </div>
                          <div onClick={() => setAddExpense(true)}
-                              className={`sidebar-item`}
+                              className={`sidebar-item for-mobile`}
                          >
                               <img src={AddExpenseIcon} alt="" />
-                              <span>Transactions</span>
+                              <span>Add Expense</span>
                          </div>
                          {/* <Link
                               className={`sidebar-item ${location.pathname === '/stat' ? 'active' : ''}`}

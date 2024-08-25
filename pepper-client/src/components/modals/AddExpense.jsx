@@ -36,7 +36,7 @@ const AddExpense = () => {
                return;
           }
           try {
-               const res = await axios.post('http://localhost:3000/transactions/add-expense', { ...formData, token: userValue.uid })
+               const res = await axios.post(`${import.meta.env.VITE_API_URL}/transactions/add-expense`, { ...formData, token: userValue.uid })
                if (res.status === 200) {
                     setAddExpense(false)
                     setFormData({
