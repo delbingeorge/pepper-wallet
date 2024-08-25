@@ -36,9 +36,13 @@
     margin-left: 20px;
 }
 
-.sidebar-header img {
+.sidebar-header .img-for-desktop {
     width: 150px;
     margin: 10px 0;
+}
+
+.sidebar-header .img-for-mobile {
+    display: none;
 }
 
 .sidebar-item-container {
@@ -277,8 +281,8 @@
 
 .slide-in-sheet .sheet-content {
     background-color: rgb(255, 255, 255);
-    min-width: 45vw;
-    min-height: 60vh;
+    min-width: 30vw;
+    min-height: 45vh;
     border-radius: 15px;
     padding: 20px 30px;
 }
@@ -739,4 +743,68 @@ textarea {
 
 .transaction-right .expense {
     color: rgb(255, 40, 40);
+}
+
+@media only screen and (max-width: 480px) {
+    .sidebar {
+        min-width: fit-content;
+    }
+
+    .sidebar-header {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .sidebar-header .img-for-desktop {
+        display: none;
+    }
+
+    .sidebar-header .img-for-mobile {
+        display: block;
+        object-fit: contain;
+        height: 25px;
+        width: 25px;
+        margin: 10px;
+    }
+
+    .sidebar-item-container {
+        padding: 0 10px;
+    }
+
+    .sidebar-item {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+        padding: 12px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .sidebar-item img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .sidebar-item span {
+        display: none;
+    }
+    
+    .side-contents {
+        display: none;
+    }
+
+    .result-content h4 {
+        display: none;
+    }
+    .transaction-right {
+        margin: 0 5px;
+    }
+    .content-container {
+        min-width: fit-content;
+    }
 }

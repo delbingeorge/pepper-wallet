@@ -2,6 +2,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../assets/styles/sidebar.css'
 import PepperWallet from '../assets/images/logo/pepper-wallet.png'
+import PepperWalletForMobile from '../../public/pepper-wallet.png'
 import CloseIcon from '../assets/images/icons/action-icon/close.png'
 
 // Outline Icon imports
@@ -11,12 +12,16 @@ import WalletIcon from '../assets/images/icons/sidebar-icons/wallet-outline.png'
 // Solid Icon imports
 import DashboardSolid from '../assets/images/icons/sidebar-icons/dashboard-solid.png'
 import WalletSolid from '../assets/images/icons/sidebar-icons/wallet-solid.png'
-import { authState, userInfo } from '../provider/RecoilStore';
+import { authState, showModalForExpense, showModalForIncome, userInfo } from '../provider/RecoilStore';
 import { useRecoilState } from 'recoil';
 import DefaultImage from '../assets/images/icons/default-icon/sample.png'
 import { useState } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
+import AddIncome from '../components/modals/AddIncome';
+import AddExpense from '../components/modals/AddExpense';
+import AddExpenseIcon from '../assets/images/icons/sidebar-icons/add-expense.png';
+import AddIncomeIcon from '../assets/images/icons/sidebar-icons/add-income.png';
 
 function Sidebar() {
      const location = useLocation();
@@ -24,6 +29,8 @@ function Sidebar() {
      const [showModal, setShowModal] = useState(false)
      const [authValue, setAuthValue] = useRecoilState(authState);
      const [userValue, setUserValue] = useRecoilState(userInfo)
+     const [addIncome, setAddIncome] = useRecoilState(showModalForIncome);
+     const [addExpense, setAddExpense] = useRecoilState(showModalForExpense);
      const signOutUser = async () => {
           try {
                await signOut(auth)
@@ -40,7 +47,8 @@ function Sidebar() {
                <div>
                     <div className='sidebar-header'>
                          <Link to={'/dashboard'} >
-                              <img src={PepperWallet} alt="" />
+                              <img className='img-for-desktop' src={PepperWallet} alt="" />
+                              <img className='img-for-mobile' src={PepperWalletForMobile} alt="" />
                          </Link>
                     </div>
                     <div className='sidebar-item-container'>
@@ -58,6 +66,18 @@ function Sidebar() {
                               <img src={location.pathname === '/transactions' ? WalletSolid : WalletIcon} alt="" />
                               <span>Transactions</span>
                          </Link>
+                         <div onClick={() => setAddIncome(true)}
+                              className={`sidebar-item`}
+                         >
+                              <img src={AddIncomeIcon} alt="" />
+                              <span>Transactions</span>
+                         </div>
+                         <div onClick={() => setAddExpense(true)}
+                              className={`sidebar-item`}
+                         >
+                              <img src={AddExpenseIcon} alt="" />
+                              <span>Transactions</span>
+                         </div>
                          {/* <Link
                               className={`sidebar-item ${location.pathname === '/stat' ? 'active' : ''}`}
                               to="/stat"
@@ -94,6 +114,12 @@ function Sidebar() {
                          </div>
                          <button className='sign-out' onClick={() => { signOutUser() }}>Sign Out</button>
                     </div>
+               </div>
+               <div className={`slide-in-sheet ${addIncome ? 'open' : 'close'}`}>
+                    <AddIncome />
+               </div>
+               <div className={`slide-in-sheet ${addExpense ? 'open' : 'close'}`}>
+                    <AddExpense />
                </div>
           </div>
      );
