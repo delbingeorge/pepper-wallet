@@ -10,14 +10,12 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "description": "A server application using Node.js, Express, and Firebase.",
+    "description": "",
     "dependencies": {
         "body-parser": "^1.20.2",
         "cors": "^2.8.5",
         "express": "^4.19.2",
-        "firebase-admin": "^12.3.1"
-    },
-    "devDependencies": {
+        "firebase-admin": "^12.3.1",
         "nodemon": "^3.1.4"
     }
 }

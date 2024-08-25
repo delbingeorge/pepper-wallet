@@ -3,10 +3,10 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import authRoute from "./routes/authRoute.js";
 import incomeRoute from "./routes/incomeRoute.js";
-import expenseRoute from "./routes/ExpenseRoute.js";
 import getTransaction from "./routes/getTransaction.js";
 import deleteTransaction from "./routes/deleteTransaction.js";
 import updateRoute from "./routes/updateRoute.js";
+import expenseRoute from "./routes/expenseRoute.js";
 
 const app = express();
 app.use(cors());
