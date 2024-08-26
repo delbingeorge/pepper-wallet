@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { userInfo, userTransactions } from '../provider/RecoilStore'
+
 import RemoveIcon from '../assets/images/icons/action-icon/remove.png'
 import EditIcon from '../assets/images/icons/action-icon/edit.png'
 import CloseIcon from '../assets/images/icons/action-icon/close.png'
@@ -13,6 +14,12 @@ import FoodIcon from "../assets/images/icons/expense-icon/food.png"
 import GroceryIcon from "../assets/images/icons/expense-icon/grocery.png"
 import FuelIcon from "../assets/images/icons/expense-icon/fuel.png"
 import HealthIcon from "../assets/images/icons/expense-icon/health.png"
+import ShoppingIcon from "../assets/images/icons/expense-icon/shopping.png"
+import DebtPaidIcon from "../assets/images/icons/expense-icon/debt-pay.png"
+import EduIcon from "../assets/images/icons/expense-icon/education.png"
+import EnterIcon from "../assets/images/icons/expense-icon/entertainment.png"
+import RentIcon from "../assets/images/icons/expense-icon/rent.png"
+import TransIcon from "../assets/images/icons/expense-icon/transport.png"
 
 const Transactions = () => {
      const [userTransactionData, setUserTransactionData] = useState([]);
@@ -41,12 +48,12 @@ const Transactions = () => {
           grocery: GroceryIcon,
           fuel: FuelIcon,
           health: HealthIcon,
-          shopping: "../assets/images/icons/expense-icon/shopping.png",
-          "debt paid": "../assets/images/icons/expense-icon/debt-pay.png",
-          education: "../assets/images/icons/expense-icon/education.png",
-          entertainment: "../assets/images/icons/expense-icon/entertainment.png",
-          rent: "../assets/images/icons/expense-icon/rent.png",
-          transport: "../assets/images/icons/expense-icon/transport.png",
+          shopping: ShoppingIcon,
+          "debt paid": DebtPaidIcon,
+          education: EduIcon,
+          entertainment: EnterIcon,
+          rent: RentIcon,
+          transport: TransIcon,
      };
 
      useEffect(() => {
