@@ -1,6 +1,6 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
+import axios from 'axios'
 import { userInfo, userTransactions } from '../provider/RecoilStore'
 
 import RemoveIcon from '../assets/images/icons/action-icon/remove.png'
@@ -56,9 +56,10 @@ const Transactions = () => {
           transport: TransIcon,
      };
 
+     // Modify useEffect to re-run when userTransactionData, showDeletePrompt, or showEditPrompt change
      useEffect(() => {
           fetchAllTransactions();
-     }, [])
+     }, [userTransactionData, showDeletePrompt, showEditPrompt]); // Add dependencies here
 
      const fetchAllTransactions = async () => {
           try {
@@ -110,6 +111,7 @@ const Transactions = () => {
                          dateOfTransaction: '',
                          category: '',
                     });
+                    fetchAllTransactions(); // Fetch transactions again after update
                } else {
                     console.log("Something went wrong!");
                }
@@ -123,6 +125,7 @@ const Transactions = () => {
                const res = await axios.delete(`${import.meta.env.VITE_API_URL}/transactions/delete/${deleteItemId}`);
                if (res.status === 200) {
                     setShowDeletePrompt(false);
+                    fetchAllTransactions(); // Fetch transactions again after deletion
                } else {
                     console.log("Failed to delete transaction.");
                }
