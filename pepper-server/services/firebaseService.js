@@ -20,7 +20,7 @@ export const addUserToDB = async (uid, userRecord) => {
             lastSignInTime: userRecord.metadata.lastSignInTime,
             creationTime: userRecord.metadata.creationTime,
         },
-        { merge: true }
+        // { merge: true }
     );
 };
 
