@@ -5,6 +5,14 @@ import { userInfo, userTransactions } from '../provider/RecoilStore'
 import RemoveIcon from '../assets/images/icons/action-icon/remove.png'
 import EditIcon from '../assets/images/icons/action-icon/edit.png'
 import CloseIcon from '../assets/images/icons/action-icon/close.png'
+import GiftsIcon from '../assets/images/icons/income-icon/gifts-icon.png'
+import SalaryIcon from '../assets/images/icons/income-icon/salary.png';
+import SavingsIcon from '../assets/images/icons/income-icon/savings.png'
+import OtherIcon from '../assets/images/icons/income-icon/other.png'
+import FoodIcon from "../assets/images/icons/expense-icon/food.png"
+import GroceryIcon from "../assets/images/icons/expense-icon/grocery.png"
+import FuelIcon from "../assets/images/icons/expense-icon/fuel.png"
+import HealthIcon from "../assets/images/icons/expense-icon/health.png"
 
 const Transactions = () => {
      const [userTransactionData, setUserTransactionData] = useState([]);
@@ -25,20 +33,20 @@ const Transactions = () => {
      });
 
      const categoryImages = {
-          gifts: "src/assets/images/icons/income-icon/gifts-icon.png",
-          salary: "src/assets/images/icons/income-icon/salary.png",
-          savings: "src/assets/images/icons/income-icon/savings.png",
-          others: "src/assets/images/icons/income-icon/other.png",
-          food: "src/assets/images/icons/expense-icon/food.png",
-          grocery: "src/assets/images/icons/expense-icon/grocery.png",
-          fuel: "src/assets/images/icons/expense-icon/fuel.png",
-          health: "src/assets/images/icons/expense-icon/health.png",
-          shopping: "src/assets/images/icons/expense-icon/shopping.png",
-          "debt paid": "src/assets/images/icons/expense-icon/debt-pay.png",
-          education: "src/assets/images/icons/expense-icon/education.png",
-          entertainment: "src/assets/images/icons/expense-icon/entertainment.png",
-          rent: "src/assets/images/icons/expense-icon/rent.png",
-          transport: "src/assets/images/icons/expense-icon/transport.png",
+          gifts: GiftsIcon,
+          salary: SalaryIcon,
+          savings: SavingsIcon,
+          others: OtherIcon,
+          food: FoodIcon,
+          grocery: GroceryIcon,
+          fuel: FuelIcon,
+          health: HealthIcon,
+          shopping: "../assets/images/icons/expense-icon/shopping.png",
+          "debt paid": "../assets/images/icons/expense-icon/debt-pay.png",
+          education: "../assets/images/icons/expense-icon/education.png",
+          entertainment: "../assets/images/icons/expense-icon/entertainment.png",
+          rent: "../assets/images/icons/expense-icon/rent.png",
+          transport: "../assets/images/icons/expense-icon/transport.png",
      };
 
      useEffect(() => {
