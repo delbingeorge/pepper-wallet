@@ -58,7 +58,7 @@ const Transactions = () => {
 
      useEffect(() => {
           fetchAllTransactions();
-     }, [userInfo, formData, transactions])
+     }, [])
 
      const fetchAllTransactions = async () => {
           try {
